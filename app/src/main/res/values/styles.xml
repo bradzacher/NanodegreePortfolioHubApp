@@ -7,14 +7,18 @@
     <color name="accent_dark">#787D7F</color>
     <color name="alert_bad">#D50000</color>
     <color name="alert_good">#64DD17</color>
-
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light">
+    <style name="AppTheme" parent="android:Theme.Material">
         <!-- Customize your theme here. -->
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
         <item name="android:colorAccent">@color/accent</item>
+
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
     </style>
 
     <style name="PortfolioButton" parent="AppTheme">
@@ -24,12 +28,20 @@
         <item name="android:layout_marginRight">32dp</item>
         <item name="android:layout_marginBottom">16dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:clickable">true</item>
+
         <item name="android:background">@color/accent</item>
+        <item name="android:textColor">@color/black</item>
+
+        <item name="android:clickable">true</item>
+        <item name="android:onClick">toastTodo</item>
     </style>
 
     <style name="CapstoneButton" parent="PortfolioButton">
         <item name="android:background">@color/alert_good</item>
+    </style>
+
+    <style name="ActionBar">
+        <item name="android:background">@color/primary</item>
     </style>
 
 </resources>

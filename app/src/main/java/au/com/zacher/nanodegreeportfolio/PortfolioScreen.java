@@ -1,12 +1,16 @@
 package au.com.zacher.nanodegreeportfolio;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
-public class PortfolioScreen extends AppCompatActivity {
+public class PortfolioScreen extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +38,16 @@ public class PortfolioScreen extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Called when the user touches one of the incomplete buttons
+     * @param view
+     */
+    public void toastTodo(View view) {
+        Context ctx = this.getApplicationContext();
+        String btnText = ((Button) view).getText().toString();
+        String toastText = String.format(getString(R.string.toastTodoText), btnText);
+        Toast.makeText(ctx, toastText, Toast.LENGTH_SHORT).show();
     }
 }
